@@ -101,6 +101,7 @@ public:
     void Normalize()
     {
         float magSq = x * x + y * y + z * z;
+        // 检查除0
         if (magSq > 0.0f)
         {
             float oneOverMag = 1.0f / sqrt(magSq);
