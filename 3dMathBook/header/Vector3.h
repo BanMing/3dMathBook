@@ -1,5 +1,9 @@
 
 #include <math.h>
+
+#ifdef INC_3D_MATH_BOOK_VECTOR3_H
+#define INC_3D_MATH_BOOK_VECTOR3_H
+
 class Vector3
 {
 public:
@@ -148,3 +152,4 @@ public:
     }
     ~Vector3();
 };
+#endif

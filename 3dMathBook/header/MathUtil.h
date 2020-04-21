@@ -10,8 +10,8 @@
 ** 描  述: 
 *******************************************************************/
 
-// #ifdef __MATHUTIL_H_INCLUDED__
-#define __MATHUTIL_H_INCLUDED__
+#ifdef INC_3D_MATH_BOOK_MATHUTIL_H
+#define INC_3D_MATH_BOOK_MATHUTIL_H
 
 #include <math.h>
 
@@ -38,4 +38,4 @@ inline void sinCos(float *returnSin, float *returnCos, float theta)
     *returnSin = sin(theta);
 }
 
-// #endif
+#endif

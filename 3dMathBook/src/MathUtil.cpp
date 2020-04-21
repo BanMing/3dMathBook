@@ -12,7 +12,7 @@
 
 #include <math.h>
 
-#include "MathUtil .h"
+#include "MathUtil.h"
 #include "Vector3.h"
 
 const Vector3 kZeroVector(0.0f, 0.0f, 0.0f);
@@ -28,3 +28,18 @@ float wrapPi(float theta)
 
 // 和acos相同，但如果x超出范围将返回最为接近的有效值
 // 返回值在0到pi之间，和c语言中的标准acos函数相同
+float safeAcos(float x)
+{
+
+    if (x <= -1.0f)
+    {
+        return kPi;
+    }
+
+    if (x >= 1.0f)
+    {
+        return 0;
+    }
+
+    return acos(x);
+}
