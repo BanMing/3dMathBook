@@ -10,8 +10,10 @@
 ** 描  述: 
 *******************************************************************/
 #include <iostream>
+#include <string>
 #include "MathUtil.h"
+
 int main() {
-    std::cout << "Hello, World!"+kZeroVector << std::endl;
+    std::cout << "Hello, World!" + std::to_string(kPi) << std::endl;
     return 0;
 }
