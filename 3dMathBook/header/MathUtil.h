@@ -10,7 +10,7 @@
 ** 描  述: 
 *******************************************************************/
 
-#ifdef INC_3D_MATH_BOOK_MATHUTIL_H
+#ifndef INC_3D_MATH_BOOK_MATHUTIL_H
 #define INC_3D_MATH_BOOK_MATHUTIL_H
 
 #include <math.h>
