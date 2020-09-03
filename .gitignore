@@ -31,3 +31,4 @@
 *.out
 *.app
 3dMathBook/cmake-build-debug/
+build/

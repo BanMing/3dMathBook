@@ -13,7 +13,8 @@
 #include <string>
 #include "MathUtil.h"
 
-int main() {
-    std::cout << "Hello, World!" + std::to_string(kPi) << std::endl;
+int main()
+{
+    std::cout << "Hello, World!" << wrapPi(30) << std::endl;
     return 0;
 }

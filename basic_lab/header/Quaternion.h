@@ -1,5 +1,5 @@
 //
-// Created by WP on 4/22/2020.
+// Created by BanMing on 4/22/2020.
 //
 
 #ifndef INC_3D_MATH_BOOK_QUATERNION_H
