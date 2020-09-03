@@ -20,7 +20,7 @@ const Vector3 kZeroVector(0.0f, 0.0f, 0.0f);
 // 通过加上适当的2pi倍数，将角度限制在-pi到pi的区间内
 float wrapPi(float theta) {
     theta += kPi;
-    theta -= floor(theta * k1Over2Pi) * k2Pi;
+    theta -= floorf(theta * k1Over2Pi) * k2Pi;
     theta -= kPi;
     return theta;
 }
@@ -37,5 +37,5 @@ float safeAcos(float x) {
         return 0;
     }
 
-    return acos(x);
+    return acosf(x);
 }

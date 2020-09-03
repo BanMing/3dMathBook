@@ -34,8 +34,8 @@ inline void sinCos(float *returnSin, float *returnCos, float theta)
 {
     // 为了简单，我们只使用标准三角函数
     // 注意在某些平台上可以做的更好一些
-    *returnCos = cos(theta);
-    *returnSin = sin(theta);
+    *returnCos = cosf(theta);
+    *returnSin = sinf(theta);
 }
 
 #endif

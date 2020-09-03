@@ -27,8 +27,8 @@ void Quaternion::setToRotateAboutX(float theta) {
     float thetaOver2 = theta * .5f;
 
     //赋值
-    w = cos(thetaOver2);
-    x = sin(thetaOver2);
+    w = cosf(thetaOver2);
+    x = sinf(thetaOver2);
     y = 0.0f;
     z = 0.0f;
 }
@@ -38,9 +38,9 @@ void Quaternion::setToRotateAboutY(float theta) {
     float thetaOver2 = theta * .5f;
 
     //赋值
-    w = cos(thetaOver2);
+    w = cosf(thetaOver2);
     x = 0.0f;
-    y = sin(thetaOver2);
+    y = sinf(thetaOver2);
     z = 0.0f;
 }
 
@@ -49,22 +49,22 @@ void Quaternion::setToRotateAboutZ(float theta) {
     float thetaOver2 = theta * .5f;
 
     //赋值
-    w = cos(thetaOver2);
+    w = cosf(thetaOver2);
     x = 0.0f;
     y = 0.0f;
-    z = sin(thetaOver2);
+    z = sinf(thetaOver2);
 }
 
 void Quaternion::setToRotateAboutAxis(const Vector3 &axis, float theta) {
     // 旋转轴必须标准化
     assert(fabs(VectorMag(axis) - 1.0f) < 0.01f);
-
+   
     //计算半角和sin值
     float thetaOver2 = theta * .5f;
-    float sinThetaOver2 = sin(thetaOver2);
+    float sinThetaOver2 = sinf(thetaOver2);
 
     //赋值
-    w = cos(thetaOver2);
+    w = cosf(thetaOver2);
     x = axis.x * sinThetaOver2;
     y = axis.y * sinThetaOver2;
     z = axis.z * sinThetaOver2;
