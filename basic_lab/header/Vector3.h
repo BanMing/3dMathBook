@@ -18,6 +18,8 @@ public:
     // 带参数
     Vector3(float nx, float ny, float nz) : x(nx), y(ny), z(nz) {}
 
+    ~Vector3() { x = y = z = 0; };
+
     // 重载赋值运算符，并返回引用，以实现左值
     Vector3 &operator=(const Vector3 &a)
     {
@@ -121,45 +123,42 @@ public:
     }
 
     // 向量点乘
-    float operator*(const Vector3 &a) const
+    float operator*() const
     {
-        return x * a.x + y * a.y + z * a.z;
+        return x * x + y * y + z * z;
     }
 
-    ~Vector3() { x = y = z = 0; };
+    // 求向量的模
+    float VectorMag() const
+    {
+        return sqrtf(x * x + y * y + z * z);
+    }
+
+    // 计算两个向量的叉乘
+    Vector3 CrossProduct(const Vector3 &b) const
+    {
+        return Vector3(y * b.z - z * b.y,
+                       z * b.x - x * b.z,
+                       x * b.y - y * b.x);
+    }
+
+    // 实现向量点乘
+    float DotProduct(const Vector3 &b) const
+    {
+        return x * b.x + y * b.y + z * b.z;
+    }
+
+    // 计算两点的距离
+    float Distance(const Vector3 &b) const
+    {
+        float dx = x - b.x;
+        float dy = y - b.y;
+        float dz = z - b.z;
+        return sqrtf(dx * dx + dy * dy + dz * dz);
+    }
 };
 
 // 非成员函数
-
-// 求向量的模
-inline float VectorMag(const Vector3 &a)
-{
-    return sqrtf(a.x * a.x + a.y * a.y + a.z * a.z);
-}
-
-// 计算两个向量的叉乘
-inline Vector3 CrossProduct(const Vector3 &a, const Vector3 &b)
-{
-    return Vector3(a.y * b.z - a.z * b.y,
-                   a.z * b.x - a.x * b.z,
-                   a.x * b.y - a.y * b.x);
-}
-
-// 实现向量左乘
-// inline Vector3 operator*(float k, const Vector3 &v)
-// {
-//     return Vector3(k * v.x, k * v.y, k * v.z);
-// }
-
-// 计算两点的距离
-inline float Distance(const Vector3 &a, const Vector3 &b)
-{
-    float dx = a.x - b.x;
-    float dy = a.y - b.y;
-    float dz = a.z - b.z;
-    return sqrtf(dx * dx + dy * dy + dz * dz);
-}
-
 extern const Vector3 kZeroVector;
 
 #endif

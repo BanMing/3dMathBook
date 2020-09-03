@@ -57,7 +57,7 @@ void Quaternion::setToRotateAboutZ(float theta) {
 
 void Quaternion::setToRotateAboutAxis(const Vector3 &axis, float theta) {
     // 旋转轴必须标准化
-    assert(fabs(VectorMag(axis) - 1.0f) < 0.01f);
+    assert(fabs(axis.VectorMag() - 1.0f) < 0.01f);
    
     //计算半角和sin值
     float thetaOver2 = theta * .5f;

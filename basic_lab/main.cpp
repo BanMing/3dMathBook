@@ -15,6 +15,8 @@
 
 int main()
 {
-    std::cout << "Hello, World!" << wrapPi(30) << std::endl;
+    // std::cout << "Hello, World!" << wrapPi(30) << std::endl;
+    int x = (-4 - 2 * x * x) / 6;
+    std::cout << x << std::endl;
     return 0;
 }
